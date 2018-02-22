@@ -1,9 +1,9 @@
 class Timeleft {
-	constructor(target, parent) {
+	constructor(target, parent, mainWrap) {
 		this.block = document.createElement('div');
 		this.block.className = parent;
 
-		this.mainWrap = document.getElementsByClassName('main')[0];
+		this.mainWrap = document.querySelector(mainWrap) || document.getElementsByClassName('main')[0];
 
 		this.mainWrap.appendChild(this.block);
 		this.runTimer(target, this.block);
@@ -39,3 +39,6 @@ class Timeleft {
 
 var target = new Date(2018, 1, 22, 22, 21, 60, 0);
 var timeleft = new Timeleft(target, 'output');
+
+var target2 = new Date(2018, 1, 23, 20, 32, 60, 0);
+var timeleft2 = new Timeleft(target2, 'second_output', '.timer_wrap');
