@@ -1,0 +1,15 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.main {
+	width: 100vw;
+	height: 100vh;
+	padding: 10px;
+	font: 22px 'Arial', sans-serif;
+	color: #fff;
+	background: linear-gradient(170deg, rgba(0, 43, 255, 0.85), rgba(117, 10, 144, 0.85) 75%);
+	text-transform: capitalize;
+}
