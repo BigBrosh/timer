@@ -59,8 +59,10 @@ class Timeleft {
 				element.font = "12pt Arial";
 			}
 
+			// clear each time
 			element.clearRect(0, 0, parent.width, parent.height);
 
+			// time
 			this.headingStyles();
 			element.fillText(`${this.days}`, parent.width/8, parent.height/2);
 
@@ -73,6 +75,7 @@ class Timeleft {
 			this.headingStyles();
 			element.fillText(`${this.seconds}`, (parent.width/8)*7, parent.height/2);
 
+			// time description
 			this.hintStyles();
 			element.fillText(`D`, parent.width/8, (parent.height/2) + 20);
 
@@ -88,28 +91,36 @@ class Timeleft {
 			this.progressDays = new TimerProgress({
 				parent: parent,
 				queueNumber: 1,
-				circleRadius: 1
+				circleRadius: 1,
+				total: 365,
+				checkNumber: this.days
 			});
 			this.progressDays.paintCircles();
 
 			this.progressHours = new TimerProgress({
 				parent: parent,
 				queueNumber: 2,
-				circleRadius: 1
+				circleRadius: 1,
+				total: 24,
+				checkNumber: this.hours
 			});
 			this.progressHours.paintCircles();
 
 			this.progressMinutes = new TimerProgress({
 				parent: parent,
 				queueNumber: 3,
-				circleRadius: 1
+				circleRadius: 1,
+				total: 60,
+				checkNumber: this.minutes
 			});
 			this.progressMinutes.paintCircles();
 
 			this.progressSeconds = new TimerProgress({
 				parent: parent,
 				queueNumber: 4,
-				circleRadius: 1
+				circleRadius: 1,
+				total: 60,
+				checkNumber: this.seconds
 			});
 			this.progressSeconds.paintCircles();
 
