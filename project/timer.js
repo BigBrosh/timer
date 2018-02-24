@@ -44,32 +44,46 @@ class Timeleft {
 			this.seconds = this.seconds > 9 ? this.seconds : '0' + this.seconds;
 			this.minutes = this.minutes > 9 ? this.minutes : '0' + this.minutes;
 			this.hours = this.hours > 9 ? this.hours : '0' + this.hours;
-			this.days = this.days < 10 ? '00' + this.days : this.days < 100 ? '0' + this.days : this.days;
+
+			this.headingStyles = () => {
+				element.textBaseline = 'middle';
+				element.textAlign = 'center';
+				element.fillStyle = "#FFF";
+				element.font = "20pt Arial";
+			}
+
+			this.hintStyles = () => {
+				element.textBaseline = 'middle';
+				element.textAlign = 'center';
+				element.fillStyle = "#FFF";
+				element.font = "12pt Arial";
+			}
 
 			element.clearRect(0, 0, parent.width, parent.height);
-			element.textBaseline = 'middle';
-			element.textAlign = 'center';
-			element.fillStyle = "#FFF";
-			element.font = "22pt Arial";
+
+			this.headingStyles();
 			element.fillText(`${this.days}`, parent.width/8, parent.height/2);
 
-			element.textBaseline = 'middle';
-			element.textAlign = 'center';
-			element.fillStyle = "#FFF";
-			element.font = "22pt Arial";
+			this.headingStyles();
 			element.fillText(`${this.hours}`, (parent.width/8)*3, parent.height/2);
 
-			element.textBaseline = 'middle';
-			element.textAlign = 'center';
-			element.fillStyle = "#FFF";
-			element.font = "22pt Arial";
+			this.headingStyles();
 			element.fillText(`${this.minutes}`, (parent.width/8)*5, parent.height/2);
 
-			element.textBaseline = 'middle';
-			element.textAlign = 'center';
-			element.fillStyle = "#FFF";
-			element.font = "22pt Arial";
+			this.headingStyles();
 			element.fillText(`${this.seconds}`, (parent.width/8)*7, parent.height/2);
+
+			this.hintStyles();
+			element.fillText(`D`, parent.width/8, (parent.height/2) + 20);
+
+			this.hintStyles();
+			element.fillText(`H`, (parent.width/8)*3, (parent.height/2) + 20);
+
+			this.hintStyles();
+			element.fillText(`M`, (parent.width/8)*5, (parent.height/2) + 20);
+
+			this.hintStyles();
+			element.fillText(`S`, (parent.width/8)*7, (parent.height/2) + 20);
 
 			this.progressDays = new TimerProgress({
 				parent: parent,
