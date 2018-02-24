@@ -1,3 +1,5 @@
+import {TimerProgress} from './timerProgress.js';
+
 class Timeleft {
 	constructor(obj) {
 		for (var key in obj) {
@@ -5,6 +7,7 @@ class Timeleft {
 		}
 
 		this.target = this.targetName;
+
 		this.block = document.createElement('canvas');
 		this.block.className = this.parentName || 'output';
 		this.block.width = 230;
@@ -31,7 +34,6 @@ class Timeleft {
 			this.seconds = this.seconds%60;
 			this.minutes = this.minutes%60;
 			this.hours = this.hours%24;
-			this.days = this.days%365;
 
 			this.seconds = parseInt(this.seconds);
 			this.minutes = parseInt(this.minutes);
@@ -58,7 +60,7 @@ var timeleft = new Timeleft({
 	parent: 'output'
 });
 
-var target2 = new Date(2018, 1, 24, 20, 32, 60, 0);
+var target2 = new Date(2019, 3, 24, 20, 32, 60, 0);
 var timeleft2 = new Timeleft({
 	target: target2, 
 	parent: 'second_output', 
