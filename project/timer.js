@@ -5,21 +5,23 @@ class Timeleft {
 		}
 
 		this.target = this.targetName;
-		this.block = document.createElement('div');
+		this.block = document.createElement('canvas');
 		this.block.className = this.parentName || 'output';
+		this.block.width = 230;
+		this.block.height = 60;
+		this.element = this.block.getContext('2d');
 
 		this.mainWrap = document.querySelector(this.mainWrapName) || document.getElementsByClassName('main')[0];
 
 		this.mainWrap.appendChild(this.block);
-		this.runTimer(this.target, this.block);
+		this.runTimer(this.target, this.block, this.element);
 	}
 	
-	runTimer(target, parent) {
+	runTimer(target, parent, element) {
 		setInterval(function(){
 			this.current = new Date();
-			this.target = target;
 
-			this.difference = (this.target - this.current) > 0 ? (this.target - this.current) : 0;
+			this.difference = (target - this.current) > 0 ? (target - this.current) : 0;
 
 			this.seconds = this.difference/1000;
 			this.minutes = this.seconds/60;
@@ -40,7 +42,12 @@ class Timeleft {
 			this.minutes = this.minutes > 9 ? this.minutes : '0' + this.minutes;
 			this.hours = this.hours > 9 ? this.hours : '0' + this.hours;
 
-			parent.innerHTML = `timeleft: ${this.days} : ${this.hours} : ${this.minutes} : ${this.seconds}`;
+			element.textBaseline = 'middle';
+			element.textAlign = 'center';
+			element.clearRect(0, 0, parent.width, parent.height);
+			element.fillStyle = "#FFF";
+			element.font = "22pt Arial";
+			element.fillText(`${this.days} : ${this.hours} : ${this.minutes} : ${this.seconds}`, parent.width/2, parent.height/2);
 		}, 1000);
 	}
 }
