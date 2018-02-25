@@ -41,7 +41,7 @@ export class TimerProgress {
 
 		for (let i = 0, amount = this.amount; i < amount; i++) { 
 			this.coordinateX = this.centerCoordinateX + (this.parent.height/2 - this.circleRadius - 8) * Math.cos((2*Math.PI) * i/this.amount);
-			this.coordinateY = this.centerCoordinateY + (this.parent.height/2 - this.circleRadius - 8) * Math.sin((2*Math.PI) * i/this.amount);
+			this.coordinateY = this.centerCoordinateY - (this.parent.height/2 - this.circleRadius - 8) * Math.sin((2*Math.PI) * i/this.amount);
 
 			this.element.beginPath();
 
