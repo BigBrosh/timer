@@ -143,7 +143,7 @@ var Timeleft = function () {
 															element.textBaseline = 'middle';
 															element.textAlign = 'center';
 															element.fillStyle = "#FFF";
-															element.font = "12pt Arial";
+															element.font = "10pt Arial";
 												};
 
 												// clear each time
@@ -217,11 +217,11 @@ var Timeleft = function () {
 			return Timeleft;
 }();
 
-var target = new Date(2018, 1, 25, 22, 21, 60, 0);
-var timeleft = new Timeleft({
-			target: target,
-			parent: 'output'
-});
+// var target = new Date(2018, 1, 25, 22, 21, 60, 0);
+// var timeleft = new Timeleft({
+// 	target: target, 
+// 	parent: 'output'
+// });
 
 var target2 = new Date(2018, 3, 24, 20, 32, 60, 0);
 var timeleft2 = new Timeleft({
@@ -278,7 +278,7 @@ var TimerProgress = exports.TimerProgress = function () {
 				break;
 		}
 
-		this.highlightedCount = Math.floor(this.checkNumber / this.total * 100);
+		this.highlightedCount = Math.ceil(this.checkNumber / this.total * 100);
 		this.highlightedCount = parseInt(this.highlightedCount * this.amount / 100);
 
 		this.element = this.parent.getContext('2d');
@@ -297,9 +297,9 @@ var TimerProgress = exports.TimerProgress = function () {
 				this.element.beginPath();
 
 				if (i <= this.highlightedCount) {
-					this.element.fillStyle = '#FF0000';
+					this.element.fillStyle = '#4CAF50';
 				} else {
-					this.element.fillStyle = '#FFF'; // 'rgba(0, 179, 141, .3)'
+					this.element.fillStyle = '#FFF';
 				}
 
 				this.element.arc(this.coordinateX, this.coordinateY, this.circleRadius, 0, 360);

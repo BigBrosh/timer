@@ -128,11 +128,11 @@ class Timeleft {
 	}
 }
 
-var target = new Date(2018, 1, 25, 22, 21, 60, 0);
-var timeleft = new Timeleft({
-	target: target, 
-	parent: 'output'
-});
+// var target = new Date(2018, 1, 25, 22, 21, 60, 0);
+// var timeleft = new Timeleft({
+// 	target: target, 
+// 	parent: 'output'
+// });
 
 var target2 = new Date(2018, 3, 24, 20, 32, 60, 0);
 var timeleft2 = new Timeleft({
