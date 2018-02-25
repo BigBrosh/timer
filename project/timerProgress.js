@@ -51,7 +51,7 @@ export class TimerProgress {
 			}
 
 			else {
-				this.element.fillStyle = '#FFF'; // 'rgba(0, 179, 141, .3)'
+				this.element.fillStyle = '#FFF';
 			}
 
 			this.element.arc(this.coordinateX, this.coordinateY, this.circleRadius, 0, 360);
