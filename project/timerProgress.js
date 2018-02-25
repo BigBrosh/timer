@@ -47,7 +47,7 @@ export class TimerProgress {
 
 			if (i <= this.highlightedCount)
 			{
-				this.element.fillStyle = '#FF0000';	
+				this.element.fillStyle = '#4CAF50';	
 			}
 
 			else {

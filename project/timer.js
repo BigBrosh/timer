@@ -56,7 +56,7 @@ class Timeleft {
 				element.textBaseline = 'middle';
 				element.textAlign = 'center';
 				element.fillStyle = "#FFF";
-				element.font = "12pt Arial";
+				element.font = "10pt Arial";
 			}
 
 			// clear each time
