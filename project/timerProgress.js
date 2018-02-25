@@ -29,7 +29,7 @@ export class TimerProgress {
 				break;
 		}
 
-		this.highlightedCount = Math.floor((this.checkNumber/this.total)*100);
+		this.highlightedCount = Math.ceil((this.checkNumber/this.total)*100);
 		this.highlightedCount = parseInt((this.highlightedCount * this.amount)/100);
 
 		this.element = this.parent.getContext('2d');
